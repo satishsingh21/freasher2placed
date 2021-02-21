@@ -43,12 +43,12 @@ $(document).ready(function(){
         const year= $("#gYear").val();
         const comment= $("#comments").val();
         const body = `
-            name:  ${name},
-            email:  ${email},
-            number: ${number},
-            stream: ${stream},
-            year: ${year},
-            comment: ${comment},
+            Name:  ${name},
+            Email:  ${email},
+            Phone Number: ${number},
+            Stream: ${stream},
+            Year: ${year},
+            Comments: ${comment},
         `;
         window.open(`mailto:kumarsingh.satish1@gmail.com?subject=${subject}&body=${body}`);
     });
