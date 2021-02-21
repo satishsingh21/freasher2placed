@@ -31,5 +31,25 @@ $(document).ready(function(){
           }
       });
     });
-  })
-  
+
+    // handle form submittion
+    $("form").submit(function(e){
+        e.preventDefault();
+        const subject = "Interview Preparation";
+        const name=  $("#name").val();
+        const email=  $("#email").val();
+        const number= $("#number").val();
+        const stream= $("#stream").val();
+        const year= $("#gYear").val();
+        const comment= $("#comments").val();
+        const body = `
+            name:  ${name},
+            email:  ${email},
+            number: ${number},
+            stream: ${stream},
+            year: ${year},
+            comment: ${comment},
+        `;
+        window.open(`mailto:kumarsingh.satish1@gmail.com?subject=${subject}&body=${body}`);
+    });
+});
