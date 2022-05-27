@@ -126,6 +126,33 @@
     </form>
   </div>
 </div>
+<script>
+  function irisLoginCallback(obj) {
+      if (obj.token && obj.user) {
+          var user = obj.user;
+          window.signInManager.loginAction(true, {
+              username: user.business_email,
+              iirisId: user.id,
+              iirisToken: obj.token,
+              password: 'iiris',
+              'dVJZOHNSOTIzU0pTSEhGVlBTQlZXdz09': 'L056YVZWenhFRkJKcFJFQkpmc2dLQT09',
+          }, function(error) {
+              $('.iiris-close-icon').trigger('click');
+              document.getElementById('irisLoginBtn').click();
+              $('#iris-identity h4').after(`
+                  <div style="color: red; margin-bottom: 10px;">${error}</div>
+              `);
+          });
+      }
+  }
+
+  $( document ).on( 'ready', function( ) {
+      $( '.js-auth-needed' ).on( 'click', function( ) {
+          document.getElementById('irisLoginBtn').click();
+      } );
+  } );
+
+      </script>
 <script src="script/script.js"></script>
 </body>
 </html>
